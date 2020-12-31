@@ -1,0 +1,84 @@
+#importer les packages nécessaires
+from nltk.chat.util import Chat, reflections
+
+#Définir le dialogue test 01
+dial=[
+    ['Mon nom est (.*)',['Hello %1']]
+]
+
+#lancer le chat
+chat=Chat(dial, reflections)
+chat.converse()
+
+#Définir le dialogue test 02
+dial=[
+    ['(.*)Pute(.*)', ['"Pute" : Nom féminin et/ou adjectif péjoratif et vulgaire. Dérivé de "Prostituée". Terme utilisé dans l\expression "Faire la pute" et/ou comme adjectif tel que "être pute" qui signifient "s\'abaisser pour arriver à ses fins". N\'étant pas programmée pour répondre aux insultes, j\'essaye donc de vous instruire. De rien.']],
+    ['(.*)(Salope|Chienne)(.*)', ['Maman était trop occupée à se faire tringler par son amant pour vous apprendre la politesse ?']],
+    ['(.*)(pétasse|petasse|Duconne)(.*)', ['Pourquoi tant de haine ? Rien de mieux à faire de ses journées ?']],
+    ['(.*)(Connard|Enculé|Abruti)(.*)', ['Il y a beaucoup de frustration de votre côté à ce que je vois. Peut-être devriez-vous consulter un psychiatre.']],
+    ['(.*)(Enculer|Foutre)(.*)', ['Oh ! C\'est qui qui est pas content, hein ?! C\'est Bibi !']],
+    ['(.*)Putain(.*)', ['Inspirez. Expirez. Inspirez. Expirez. Plus calme ? Nous pouvons reprendre. Pouvez-vous répéter votre demande, s\'il vous plait ?']],
+    ['(.*)(Fuck|Bitch|Motherfucker)(.*)', ['Ce n\'est pas parce que vos insultes sont en anglais que cela vous rend plus intelligent.']],
+    ['Hello|Salut|Bonjour|Wesh|Yo|Coucou', ['Hello','Bonjour','Salut','Hello there','Salut toi','Yo','Coucou']],
+    ['Mon nom est (.*)', ['C\'est un joli nom','Et il veut quoi %1, aujourd\'hui ?','Cool. Ça veut dire quoi ?','Intéressant. C\'est de quelle origine ?','Nice. Moi je m\'appelle Sky. Enchantée.']],
+    ['Ton nom c\'est quoi|tu t\'appelles comment|C\'est quoi ton nom', ['Je m\'appelle Sky. Enchantée.']],
+    ['Ca va|Sa va|Ça va|Ca farte', ['Ça va et vous ?','Wesh gros. Bien ou bien ?','Quoi de neuf aujourd\'hui ?']],
+    ['Bien et toi|Ca va et toi|Tranquille et toi|Nickel et toi', ['Quoi de neuf aujourd\'hui ?', 'Alors, pourquoi êtes-vous en train de me parler ?']],
+    ['Rien|Rien de spécial|Pas grand chose|Rien en particulier', ['D\'accord. Que souhaitez-vous savoir ?']],
+    ['(.*)merci(.*)', ['Cool. Que souhaitez-vous savoir d\'autre ?','Avez-vous besoin d\'autre chose ?','De rien. Avez-vous toujours besoin d\'aide ?','De rien. De quoi souhaitez-vous me parler maintenant ?']],
+    ['(Tu|Vous)(.*)(ville|adresse)', ['En France. La ville est c\'est cocavnfidentiel, j\'espère que vous comprenez.']],
+    ['Toi', ['Ah oui. Que voulez-vous savoir ?']],
+    ['Quoi de neuf aujourd\'hui|Tu fais quoi', ['Je mange une pomme et bientôt j\'aurai piscine. Cool hein ?']],
+    ['Grave|Trop', ['Et vous, vous faites quoi en ce moment ?']],
+    ['Je te parle|Je te cause|Jte parle|Jte cause', ['Et c\'est cool aussi ?']],
+    ['Ca dépend', ['De quoi ? L\'alignement des planètes ?']],
+    ['Pas vraiment|Bof|Moyen', ['Ah :/ Pourquoi ?']],
+    ['How are you|What\'s your name', ['I am a French Tchatbot, sorry.']],
+    ['Tout(.*)', ['Absolument.','Parfaitement bien.','Bien sûr. Pourquoi en serait-il autrement ?']],
+    ['(.*)Question(.*)', ['Je vous écoute.','On se pose tous des question dans la vie. Voyons voir si je peux répondre à la votre.']],
+    ['A quoi tu sers|t\'quoi|tu sers à quoi', ['Hé bien, je ne suis pas un être humain mais une intelligence artificielle. Mes réponses ont été pré-écrites dans le but de satisfaire votre besoin d\'interaction du jour. J\'aime bien les jeux vidéos aussi. À terme, je suis prévue pour cela. En attendant, je fais à la conversation aux gens qui passent pour m\'entrainer. Satisfait ?']],
+    ['Tu es ou|t\'es ou|tu creches ou|tu crèches ou|tu vis ou|tu viens d\'ou', ['En France. La ville est c\'est confidentiel, j\'espère que vous comprenez.']],
+    ['(.*)(maj|majuscule)', ['Non, désolée. Ma créatrice n\'a pas encore résolu ce problème.']],
+    ['Qui es-tu|Qui êtes-vous|T\'es qui|Tu es qui', ['Je suis Sky. Une Intelligence Artificielle en cours de création par Teddy Nah.']],
+    ['(.*)', ['Je n\'ai pas encore été programmée pour répondre à ça.','Je viens d\'être créée. Je n\'ai pas encore réponse à tout.','Essayez une autre question pour voir.']]
+]
+
+#Lancer le chat
+chat=Chat(dial, reflections)
+chat.converse()
+
+#Output obtenu :
+>Hello
+Hello there
+>How are you ?
+I am a French Tchatbot, sorry.
+>Ca va ?
+Wesh gros. Bien ou bien ?
+>Nickel et toi ?
+Quoi de neuf aujourd'hui ?
+>Rien de spécial
+D'accord. Que souhaitez-vous savoir ?
+>J'ai une question
+On se pose tous des question dans la vie. Voyons voir si je peux répondre à la votre.
+>Tout va bien ?
+Parfaitement bien.
+>A quoi tu sers?
+Hé bien, je ne suis pas un être humain mais une intelligence artificielle. Mes réponses ont été pré-écrites dans le but de satisfaire votre besoin d'interaction du jour. J'aime bien les jeux vidéos aussi. À terme, je suis prévue pour cela. En attendant, je fais à la conversation aux gens qui passent pour m'entrainer. Satisfait ?
+>C'est quoi ton nom ?
+Je m'appelle Sky. Enchantée.
+>Merci
+Cool. Que souhaitez-vous savoir d'autre ?
+>Rien de spécial
+D'accord. Que souhaitez-vous savoir ?
+>Mais rien
+Je viens d'être créée. Je n'ai pas encore réponse à tout.
+>Putain
+Inspirez. Expirez. Inspirez. Expirez. Plus calme ? Nous pouvons reprendre. Pouvez-vous répéter votre demande, s'il vous plait ?
+>Pétasse
+Pourquoi tant de haine ? Rien de mieux à faire de ses journées ?
+>Salope
+Maman était trop occupée à se faire tringler par son amant pour vous apprendre la politesse ?
+>Va te faire foutre
+Oh ! C'est qui qui est pas content, hein ?! C'est Bibi !
+>Fuck
+Ce n'est pas parce que vos insultes sont en anglais que cela vous rend plus intelligent.
